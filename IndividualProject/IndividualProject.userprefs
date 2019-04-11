@@ -1,0 +1,22 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\code\twitchInteraction.cs">
+    <Files>
+      <File FileName="Assets\code\PlayerController.cs" Line="1" Column="1" />
+      <File FileName="Assets\code\rockController.cs" Line="1" Column="1" />
+      <File FileName="Assets\code\fistController.cs" Line="1" Column="1" />
+      <File FileName="Assets\code\knife.cs" Line="1" Column="1" />
+      <File FileName="Assets\code\EnemyController.cs" Line="1" Column="1" />
+      <File FileName="Assets\code\bMove.cs" Line="1" Column="1" />
+      <File FileName="Assets\code\Weapon.cs" Line="1" Column="1" />
+      <File FileName="Assets\code\waveSpawner.cs" Line="13" Column="22" />
+      <File FileName="Assets\code\spawner2.cs" Line="12" Column="3" />
+      <File FileName="Assets\code\twitchInteraction.cs" Line="30" Column="1" />
+      <File FileName="Assets\chestSpawner.cs" Line="74" Column="17" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
