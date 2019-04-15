@@ -28,7 +28,7 @@ public class PatrolBot : MonoBehaviour {
 	void FixedUpdate () {
         rTimer += Time.deltaTime;
         sTimer += Time.deltaTime;
-
+        //checks difficulty and makes the bot behave accordingly 
         if (!reversing)
         {
             if (sTimer > 45)

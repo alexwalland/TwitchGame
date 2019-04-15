@@ -12,14 +12,12 @@ public class eWeapon : MonoBehaviour {
 	Transform barrel;
 	public Transform bulletPrefab;
 
-	// Use this for initialization
 	void Start () {
         FR = firerate;
 		barrel = transform.Find ("barrel");
 		Invoke ("Shoot", 5 / FR);
 	}
 	
-	// Update is called once per frame
 	void Update ()
     {
         if (PlayerPrefs.GetInt("difficulty") > 2)

@@ -10,25 +10,44 @@ public class TwitchTest : MonoBehaviour
     private StreamReader reader;
     private StreamWriter writer;
 
-    private string username = PlayerPrefs.GetString("username");
-    private string channelname = PlayerPrefs.GetString("username");
-    private string password = PlayerPrefs.GetString("password");
+    private string username;
+    private string channelname;
+    private string password;
+
+    public void Update()
+    {
+        username = PlayerPrefs.GetString("username");
+        channelname = PlayerPrefs.GetString("username");
+        password = PlayerPrefs.GetString("password");
+    }
 
     public void Connect()
     {
-        twitchClient = new TcpClient("irc.chat.twitch.tv", 6667);
-        reader = new StreamReader(twitchClient.GetStream());
-        writer = new StreamWriter(twitchClient.GetStream());
-
-        writer.WriteLine("PASS " + password);
-        writer.WriteLine("NICK " + username);
-        writer.WriteLine("USER " + username + " 8*:" + username);
-        writer.WriteLine("JOIN #" + channelname);
-        writer.Flush();
-
-        if (twitchClient.Connected)
+        //makes sure that we have a password and username
+        if (username == "null" || password == "null")
         {
-            PlayerPrefs.SetInt("online", 1);
+            //dont connect
+        }
+        else
+        {
+            twitchClient = new TcpClient("irc.chat.twitch.tv", 6667);
+            reader = new StreamReader(twitchClient.GetStream());
+            writer = new StreamWriter(twitchClient.GetStream());
+
+            writer.WriteLine("PASS " + password);
+            writer.WriteLine("NICK " + username);
+            writer.WriteLine("USER " + username + " 8*:" + username);
+            writer.WriteLine("JOIN #" + channelname);
+            writer.Flush();
+
+            if (twitchClient.Connected)
+            {
+                PlayerPrefs.SetInt("online", 1);
+            }
+            else
+            {
+                PlayerPrefs.SetInt("online", 0);
+            }
         }
     }
 }

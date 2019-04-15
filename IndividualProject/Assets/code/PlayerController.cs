@@ -40,29 +40,32 @@ public class PlayerController : MonoBehaviour {
 			Application.Quit ();
 		}
 
-        if (Input.GetKeyDown(KeyCode.P))
+        //allow player to put game back to normal speed or change weapon
+        if (Input.GetKeyDown(KeyCode.P) && delay > 30)
         {
+            delay = 0;
             Time.timeScale = 0;
         }
 
-        if (Input.GetKeyDown(KeyCode.Z) && delay > 60)
+        if (Input.GetKeyDown(KeyCode.Alpha1) && delay > 60)
         {
             fist.selectWeapon(1);
             delay = 0;
         }
 
-        if (Input.GetKeyDown(KeyCode.X) && delay > 60)
+        if (Input.GetKeyDown(KeyCode.Alpha2) && delay > 60)
         {
             fist.selectWeapon(2);
             delay = 0;
         }
 
-        if (Input.GetKeyDown(KeyCode.C) && delay > 60)
+        if (Input.GetKeyDown(KeyCode.Alpha3) && delay > 60)
         {
             fist.selectWeapon(3);
             delay = 0;
         }
 
+        //set player to follow mouse and adjust movement based on where the mouse is pointing
         Vector2 direction = Camera.main.ScreenToWorldPoint (Input.mousePosition)- transform.position;
 		float angle = Mathf.Atan2 (direction.y, direction.x) * Mathf.Rad2Deg;
 		Quaternion rot = Quaternion.AngleAxis (angle, Vector3.forward);

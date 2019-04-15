@@ -27,10 +27,11 @@ public class twitchInteraction : MonoBehaviour
 
     void Start()
     {
+        //set twitch details to playerprefs set in options menu
         username = PlayerPrefs.GetString("username");
         channelname = PlayerPrefs.GetString("username");
         password = PlayerPrefs.GetString("password");
-    Connect();
+        Connect();
     }
 
     void Update()
@@ -54,6 +55,7 @@ public class twitchInteraction : MonoBehaviour
 
     private void ReadChat()
     {
+        // seperate the messages from twitch into the message and chatname and send the message to part that changes the game
         if (twitchClient.Available > 0)
         {
             var message = reader.ReadLine();

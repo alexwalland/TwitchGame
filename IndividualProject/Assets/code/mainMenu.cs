@@ -17,6 +17,7 @@ public class mainMenu : MonoBehaviour
 
     public void PlayGame()
     {
+        //check to see if connected to determine whether the twitch or offline level is needed
         if (PlayerPrefs.GetInt("offline") == 0)
         {
             SceneManager.LoadScene(2);
@@ -47,8 +48,8 @@ public class mainMenu : MonoBehaviour
         PlayerPrefs.SetString("username", username);
     }
 
-    public void GetPassword(string password)
+    public void GetPassword(string AOuth)
     {
-        PlayerPrefs.SetString("passsword", password);
+        PlayerPrefs.SetString("password", AOuth);
     }
 }

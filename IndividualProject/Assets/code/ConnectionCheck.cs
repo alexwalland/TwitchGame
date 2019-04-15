@@ -14,5 +14,10 @@ public class ConnectionCheck : MonoBehaviour
         {
             connector.color = Color.green;
         }
+        else
+        {
+            connector.color = Color.red;
+        }
+            
     }
 }

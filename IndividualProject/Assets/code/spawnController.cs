@@ -32,6 +32,7 @@ public class spawnController : MonoBehaviour
 
     void Update()
     {
+        // check to see if there is any bots in game if not spawns more
         nBots = GameObject.FindGameObjectsWithTag("normal");
         if (nBots.Length == 0)
         {
@@ -50,6 +51,7 @@ public class spawnController : MonoBehaviour
             SpawnShield(Random.Range(2, 4));
         }
 
+        //set spawn delay based on difficulty
         if (PlayerPrefs.GetInt("difficulty") > 1)
         {
             nDelay = 15;

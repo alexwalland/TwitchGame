@@ -76,7 +76,7 @@ public class fistController : MonoBehaviour {
 	public void selectWeapon(int slot)
 	{
 		int i = 0;
-
+        //change weapon depending on list and set the others to inactive
 		if (slot == 4) {
 			fistW = true;
 			foreach (Transform weapon in transform) {
